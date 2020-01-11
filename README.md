@@ -27,12 +27,42 @@ query untuk menampilkan seluruh data dari tabel customer, motor dan brand adalah
 hasilnya adalah sebagai berikut
 ![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/Screenshot%20(33).png)
 
-Berikut adalah hasil POST/Query menambah data 
+#### Berikut adalah hasil POST/Query menambah data 
+Tambah Brand
 ![Tambah Brand](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/tabahBrand.png)
+
+Hasil Tambah Brand
 ![Hasil Brand](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/hasilTambahBrand.png)
+
+Tambah Customer
 ![Tambah Customer](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/tambahCustomer.png)
+
+Hasil Tambah Customer
 ![Hasil Customer](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/hasilTambahCustomer.png)
+
+Tambah Motor
 ![Tambah Motor](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/tambahMotor.png)
+
+Hasil Tambah Motor
 ![Hasil Motor](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/menampilkanSeluruhTbMotor.png)
+
+Tambah dan Hasil tambah transaksi
 ![Tambah dan Hasil Transaksi](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/penambahanTbTransaksidanViewTbTransaksi.png)
 
+#### Aplikasi
+aplikasi ini dibuat dengan node.js untuk menjalankan ketik `node app.js` pada cmd/terminal kemudian akses pada `localhost:3000`. Database sudah saya upload jugasilahkan di import ke sql `db_dwid`. berikut adalah beberapa screenshot aplikasinya
+
+Main Menu
+![Main Menu](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/Screenshot%20(34).png)
+
+Menu Beli
+![Main Menu](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/Screenshot%20(35).png)
+
+Menu Tambah Brand
+![Main Menu](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/Screenshot%20(36).png)
+
+Menu Tambah Produk
+![Main Menu](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/Screenshot%20(37).png)
+
+Menu Tambah Customer
+![Main Menu](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/Screenshot%20(38).png)
