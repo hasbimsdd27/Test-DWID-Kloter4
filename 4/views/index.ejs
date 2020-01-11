@@ -1,0 +1,175 @@
+<%- include('layout/header'); -%>
+
+<h1>MSDD Motorcycle</h1>
+<div class="text-right">
+    <a class="badge badge-primary mr-1" href="" data-toggle="modal" data-target="#tambahBrand">Add Brand</a>
+    <a class="badge badge-primary mr-1" data-toggle="modal" data-target="#tambahPro" href="">Add Product</a>
+    <a class="badge badge-primary mr-1" data-toggle="modal" data-target="#tambahCust" href="">Add Customer</a>
+</div>
+
+<div class="row">
+  <% dataMotor.forEach((v)=>{%>
+  <div class="col-md-6">
+    <div class="card mr-1 mt-1">
+      <div class="card-body">
+        <img src="/img/<%= v.image%>" width="250px" alt="" class="text-center">
+        <h6><%= v.motor_name %></h6>
+        <p>Motor ini merupakan motor keluaran brand <%= v.brand_name%> dengan spesifikasi <%= v.spesification %>. Kami menyediakan motor ini dengan warna <%= v.color%></p>
+        <div class="text-right"><button type="button" class="btn btn-success" data-toggle="modal" data-target="#beli<%= v.id%>">
+          Beli Motor
+        </button></div>
+      </div>
+    </div>
+  </div>
+  <%})%>
+</div>
+
+<!-- modal beli -->
+<!-- Modal -->
+<% dataMotor.forEach((v)=>{%>
+<div class="modal fade" id="beli<%= v.id%>" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="beli<%= v.id%>Label">Beli Motor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+        <form method="POST" action="/beli">
+          <input type="hidden" class="form-control" id="motor_brand" name="motor_brand" value="<%=v.brand_id%>">
+          <div class="form-group">
+            <label for="divisi">Customer</label>
+            <select class="form-control" id="customer_id" name="customer_id">
+              <% dataCustomer.forEach((v)=>{ %>
+                <option value="<%= v.id%>"><%= v.name %></option>
+                <%})%>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="motor_nama">Nama Motor</label>
+            <input type="text" class="form-control" id="motor_nama" name="motor_nama" value="<%=v.motor_name%>">
+          </div>
+          <div class="form-group">
+            <label for="motor_warna">Warna Motor</label>
+            <input type="text" class="form-control" id="motor_warna" name="motor_warna" value="<%=v.color%>">
+          </div>
+          <div class="form-group">
+            <label for="unit">Jumlah</label>
+            <input type="number" class="form-control" id="unit" name="unit">
+          </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLose</button>
+        <button type="submit" class="btn btn-primary">Beli</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%});%>
+
+<!-- Modal Add Customer -->
+<div class="modal fade" id="tambahCust" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tambahCustLabel">Tambah Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+        <form method="POST" action="/tambahcust">
+          <div class="form-group">
+            <label for="name">Nama Customer</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="address">Alamat</label>
+            <input type="text" class="form-control" id="address" name="address">
+          </div>
+          <div class="form-group">
+            <label for="phone">Nomor Telepon</label>
+            <input type="text" class="form-control" id="phone" name="phone">
+          </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLose</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Add Produk -->
+<div class="modal fade" id="tambahPro" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tambahProLabel">Tambah Produk</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+        <form method="POST" action="/tambahproduk">
+          <div class="form-group">
+            <label for="name">Nama Motor</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="divisi">Brand</label>
+            <select class="form-control" id="brand_id" name="brand_id">
+              <% dataBrand.forEach((v)=>{ %>
+                <option value="<%= v.id%>"><%= v.name %></option>
+                <%})%>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="image">Gambar</label>
+            <input type="text" class="form-control" id="image" name="image">
+          </div>
+          <div class="form-group">
+            <label for="color">Warna</label>
+            <input type="text" class="form-control" id="color" name="color">
+          </div>
+          <div class="form-group">
+            <label for="spesification">Spesifikasi</label>
+            <input type="text" class="form-control" id="spesification" name="spesification">
+          </div>
+          <div class="form-group">
+            <label for="stock">Stok</label>
+            <input type="number" class="form-control" id="stock" name="stock">
+          </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLose</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Add Brand -->
+<div class="modal fade" id="tambahBrand" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tambahBrandLabel">Tambah Produk</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+        <form method="POST" action="/tambahbrand">
+          <div class="form-group">
+            <label for="name">Nama Motor</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLose</button>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('layout/footer'); -%>
