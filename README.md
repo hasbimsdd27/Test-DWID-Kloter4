@@ -13,26 +13,26 @@ nomor 4 ditambahkan sebuah tabel dengan nama transaction_tb yang berisi:
 query untuk menampilkan data dari motorcycle_tb adalah `Select * From motorcycle_tb INNER JOIN brand_tb on motorcycle_tb.brand_id = brand_tb.id ORDER BY motorcycle_tb.id;`
 hasilnya adalah sebagai berikut:
 
-![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/menampilkanSeluruhTbMotor.png)
+![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/menampilkanSeluruhTbMotor.png)
 
 query untuk menampilkan data motor sesuai brand adalah `SELECT brand_tb.id, brand_tb.name AS brand_name, GROUP_CONCAT(motorcycle_tb.name ORDER BY motorcycle_tb.name SEPARATOR ', ') AS name FROM brand_tb join Motorcycle_tb ON motorcycle_tb.brand_id = brand_tb.id GROUP BY brand_tb.id;`
 hasilnya adalah sebagai berikut
-![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/menampilkanMotorBerdasarkanBrand.png)
+![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/menampilkanMotorBerdasarkanBrand.png)
 
 query untuk menampilkan tabel transaksi adalah `Select * From transaction_tb INNER JOIN customer_tb on transaction_tb.customer_id = customer_tb.id ORDER BY transaction_tb.id;`
 hasilnya adalah sebagai berikut
-![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/penambahanTbTransaksidanViewTransaksi.png)
+![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/penambahanTbTransaksidanViewTbTransaksi.png)
 
 query untuk menampilkan seluruh data dari tabel customer, motor dan brand adalah `Select * From customer_tb;>`,`<Select * From motorcycle_tb;>`,`<Select * From brand_tb;`
 hasilnya adalah sebagai berikut
-![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/screenshot(33).png)
+![Hasil query](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/Screenshot%20(33).png)
 
 Berikut adalah hasil POST/Query menambah data 
-![Tambah Brand](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/tabahBrand.png)
-![Hasil Brand](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/hasilTambahBrad.png)
-![Tambah Customer](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/tambahCustomer.png)
-![Hasil Customer](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/hasilTambahCustomer.png)
-![Tambah Motor](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/tambahMotor.png)
-![Hasil Motor](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/menampilkanSeluruhTbMotor.png)
-![Tambah dan Hasil Transaksi](https://github.com/hasbimsdd27/Test-DWID-Kloter4/images/penambahanTbTransaksidanViewTbTransaksi.png)
+![Tambah Brand](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/tabahBrand.png)
+![Hasil Brand](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/hasilTambahBrand.png)
+![Tambah Customer](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/tambahCustomer.png)
+![Hasil Customer](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/hasilTambahCustomer.png)
+![Tambah Motor](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/tambahMotor.png)
+![Hasil Motor](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/menampilkanSeluruhTbMotor.png)
+![Tambah dan Hasil Transaksi](https://github.com/hasbimsdd27/Test-DWID-Kloter4/blob/master/images/penambahanTbTransaksidanViewTbTransaksi.png)
 
